@@ -53,7 +53,7 @@ try {
                         <a class="nav-link" href="..">home</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="./">Pokemon</a>
+                        <a class="nav-link" href="./">pokemon</a>
                     </li>
                 </ul>
             </div>
@@ -94,6 +94,7 @@ try {
                             <th>height</th>
                             <th>Type</th>
                             <th>Evolution</th>
+                            <th>view</th>
                             <?php
                             if(isset($_SESSION['user'])) {
                                 ?>
@@ -102,7 +103,6 @@ try {
                                 <?php
                             }
                             ?>
-                            <th>view</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -116,47 +116,41 @@ try {
                                     <td><?= $fila['height']; ?></td>
                                     <td><?= $fila['type']; ?></td>
                                     <td><?= $fila['evolution']; ?></td>
+
+                                    <td><a href="show.php?id=<?= $fila['id'] ?>">view</a></td>
                                     <?php
-                                    //if(isset($_SESSION['user'])) {
-                                    if(($user === 'even' && $fila['id'] % 2 == 0) || 
-                                            ($user === 'odd' && $fila['id'] % 2 != 0)) {
+                                    if(isset($_SESSION['user'])) {
                                         ?>
                                         <td><a href="destroy.php?id=<?= $fila['id'] ?>" class="borrar">delete</a></td>
                                         <td><a href="edit.php?id=<?= $fila['id'] ?>">edit</a></td>
                                         <?php
-                                    } elseif($user != null) {
-                                        ?>
-                                        <td>&nbsp;</td>
-                                        <td>&nbsp;</td>
-                                        <?php
                                     }
-                                    ?>
-                                    <td><a href="show.php?id=<?= $fila['id'] ?>">view</a></td>
-                                </tr>
-                                <?php
-                            }
-                        ?>
-                    </tbody>
-                </table>
-                <div class="row">
-                    <?php
-                    if(isset($_SESSION['user'])) {
-                        ?>
-                        <a href="create.php" class="btn btn-success">add pokemon</a>
+                                ?>
+                            </tr>
                         <?php
                     }
+                ?>
+            </tbody>
+        </table>
+        <div class="row">
+            <?php
+                if(isset($_SESSION['user'])) {
                     ?>
-                </div>
-                <hr>
-            </div>
-        </main>
-        <footer class="container">
-            <p>&copy; Pokedex 2024</p>
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="js/script.js"></script>
-    </body>
+                    <a href="create.php" class="btn btn-success">add pokemon</a>
+                    <?php
+                  }
+                  ?>
+              </div>
+              <hr>
+          </div>
+      </main>
+      <footer class="container">
+          <p>&copy; Pokedex 2024</p>
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src="js/script.js"></script>
+  </body>
 </html>
 <?php
 $connection = null;

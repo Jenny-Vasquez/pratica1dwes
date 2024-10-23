@@ -32,6 +32,11 @@ if(isset($_GET['id'])) {
     header('Location: ' . $url);
     exit;
 }
+// Restricción de eliminación basada en el usuario
+if (($user === 'even' && $id % 2 != 0) || ($user === 'odd' && $id % 2 == 0)) {
+    header('Location: .?op=destroypokemon&result=evenodd');
+    exit;
+}
 
 $sql = 'delete from pokemon where id = :id';
 $sentence = $connection->prepare($sql);

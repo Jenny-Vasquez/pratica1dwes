@@ -6,7 +6,7 @@ session_start();
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>dwes</title>
+        <title>Pokedex</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
@@ -21,7 +21,7 @@ session_start();
                         <a class="nav-link" href="./">home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./pokemon">Pokemon</a>
+                        <a class="nav-link" href="./pokemon">pokemon</a>
                     </li>
                 </ul>
             </div>
@@ -59,7 +59,7 @@ session_start();
                     }
                     ?>
                     &nbsp;
-                    <a href="pokemon" class="btn btn-success">Pokemons</a>
+                    <a href="./pokemon" class="btn btn-success">Pokemons</a>
                 </div>
                 <hr>
             </div>
