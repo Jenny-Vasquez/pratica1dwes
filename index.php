@@ -53,9 +53,8 @@ session_start();
                         <?php
                     } else {
                         ?>
-                        <a href="user/login.php?user=even" class="btn btn-success">even log in</a>
+                        <a href="user/login.php" class="btn btn-success">log in</a>
                         &nbsp;
-                        <a href="user/login.php?user=odd"  class="btn btn-success">odd log in</a>
                         <?php
                     }
                     ?>
